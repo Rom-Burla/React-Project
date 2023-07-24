@@ -1,0 +1,22 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+    place-items: center;
+}
+.grid>*{
+    width: 18rem;
+    margin: 20px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+}
+.list>*{
+    width: 22rem;
+    margin: 20px;
+}

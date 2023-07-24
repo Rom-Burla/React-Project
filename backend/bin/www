@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+
+
+const { default: mongoose } = require('mongoose');
+const express = require("express");
+const app = express();
+
+
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+
+
+const dbURI = "mongodb://127.0.0.1:27017/node-hackeru-project";
+mongoose.set("strictQuery", false);
+
+// connect to DB
+mongoose
+  .connect(dbURI)
+  .then(() => {
+    app.listen(port, () => {
+      console.log("listening to port "+ port + " and connected to DB");
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+
+
+
+
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+    var port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    }
+
+    if (port >= 0) {
+        // port number
+        return port;
+    }
+
+    return false;
+}
+
+

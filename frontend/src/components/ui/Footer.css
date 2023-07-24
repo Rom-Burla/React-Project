@@ -1,0 +1,15 @@
+div>div>.icon-dark-color{
+    color: #2196F3;
+}
+div>div>.icon-dark-color:hover{
+    color: #8dc4f1;
+}
+div>div>.icon-dark-color:active{
+    color: white;
+}
+.icon:hover{
+    color: #2196F3;
+}
+.icon:active{
+    color: #1976D2;
+}
